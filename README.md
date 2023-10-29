@@ -1,3 +1,7 @@
+# ComputeWisdom
+
+React app for Compute Wisdom and to check your computer knowledge. Powered by OpenTDb API.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
