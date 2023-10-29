@@ -1,6 +1,6 @@
 # ComputeWisdom
 
-React app for Compute Wisdom and to check your computer knowledge. Powered by OpenTDb API.
+React app For Compute Wisdom and to check your computer knowledge. Powered by OpenTDb API.
 
 # Getting Started with Create React App
 
