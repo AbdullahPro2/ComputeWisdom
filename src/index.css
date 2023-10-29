@@ -1,5 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  font-size: 62 5%;
+}
+.App {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* ----------header---------- */
+.header {
+  background-color: #04060b;
+  color: #ffa500;
+  height: 100vh;
+}
+
+/* LOGO */
+.logo {
+  width: 10rem;
+}
+
+/* navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.navbar-list {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+.navbar-list:last-child {
+  margin-right: 1.5rem;
+}
+
+li {
+  list-style: none;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+li:hover {
+  transform: scale(1.1);
+}
+
+/* header-content */
+.header-content {
+  display: flex;
+  justify-content: space-between;
+}
+.question-mark img {
+  height: 80%;
+}
+.quiz-info {
+  padding: 1rem 5rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.quiz-info-text {
+  margin-top: 2rem;
+}
+.quiz-info h1 {
+  font-size: 3rem;
+}
+.quiz-info button {
+  background: #ffa500;
+  color: #04060b;
+  background: #114b29; /* Green background */
+  color: white; /* Black text */
+  padding: 1rem;
+  border-radius: 10px;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+.quiz-info button:hover {
+  background: #004d00;
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+/* ----------header---------- */
