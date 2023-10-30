@@ -17,32 +17,46 @@ html {
   background-color: #04060b;
   color: #ffa500;
   height: 100vh;
+  position: relative;
+  overflow-x: hidden;
 }
-
-/* LOGO */
 .logo {
-  width: 10rem;
+  width: 7rem;
 }
-
-/* navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem;
+  padding: 0.3rem;
   margin-bottom: 2rem;
 }
 
 .navbar-list {
   display: flex;
-  gap: 0.5rem;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  right: -100%;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  color: #04060b;
+  background-color: #ffa600;
+  transition: all 0.3s;
+  gap: 3rem;
+  font-size: 1.2rem;
 }
-.navbar-list:last-child {
-  margin-right: 1.5rem;
+.btn {
+  background: none;
+  border: none;
+  position: absolute;
+  right: 0.5rem;
+  cursor: pointer;
 }
-
+.cross-icon {
+  filter: brightness(1%);
+}
 li {
   list-style: none;
   padding: 0.5rem;
@@ -51,43 +65,55 @@ li {
 li:hover {
   transform: scale(1.1);
 }
-
-/* header-content */
+.navbar-list.active {
+  right: 0;
+}
 .header-content {
   display: flex;
-  justify-content: space-between;
-}
-.question-mark img {
-  height: 80%;
-}
-.quiz-info {
-  padding: 1rem 5rem;
-  display: flex;
-  align-items: center;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
-
-.quiz-info-text {
-  margin-top: 2rem;
-}
-.quiz-info h1 {
-  font-size: 3rem;
+.quiz-info {
+  padding: 1rem 3rem;
 }
 .quiz-info button {
-  background: #ffa500;
-  color: #04060b;
-  background: #114b29; /* Green background */
-  color: white; /* Black text */
+  background: #ff5400;
+  color: white;
   padding: 1rem;
   border-radius: 10px;
-  font-size: 1.3rem;
   cursor: pointer;
+  border: none;
+  font-size: 1.1rem;
+  margin-top: 2.5rem;
 }
 .quiz-info button:hover {
-  background: #004d00;
-  color: #ffffff;
+  background: #ff6c23;
   transform: scale(1.1);
 }
 
-/* ----------header---------- */
+.question-mark img {
+  width: 30%;
+  margin-bottom: 1rem;
+}
+.quiz-info {
+  padding: 1rem;
+  order: 2;
+}
+.quiz-info-text {
+  margin-bottom: 1.5rem;
+}
+
+/* ----------Media Queries---------- */
+@media (max-width: 600px) {
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+}
+
+@media (min-width: 901px) and (max-width: 1200px) {
+}
+
+@media (min-width: 1201px) {
+}
