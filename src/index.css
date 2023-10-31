@@ -10,21 +10,25 @@ html {
 }
 .App {
   font-family: "Montserrat", sans-serif;
-}
-
-/* ----------header---------- */
-.header {
+  overflow-x: hidden;
+  height: 100vh;
   background-color: #04060b;
   color: #ffa500;
-  height: 100vh;
-  position: relative;
-  overflow-x: hidden;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+/* ----------header---------- */
+.header {
+  height: inherit;
 }
 .logo {
   width: 7rem;
 }
 .navbar {
   display: flex;
+  position: relative;
   justify-content: space-between;
   align-items: center;
   padding: 0.3rem;
@@ -37,7 +41,7 @@ html {
   align-items: center;
   flex-direction: column;
   position: absolute;
-  right: -100%;
+  right: -110%;
   top: 0;
   width: 100vw;
   height: 100vh;
@@ -57,12 +61,12 @@ html {
 .cross-icon {
   filter: brightness(1%);
 }
-li {
+.navbar-list li {
   list-style: none;
   padding: 0.5rem;
   cursor: pointer;
 }
-li:hover {
+.navbar-list li:hover {
   transform: scale(1.1);
 }
 .navbar-list.active {
@@ -117,3 +121,6 @@ li:hover {
 
 @media (min-width: 1201px) {
 }
+
+/* https://opentdb.com/api_config.php */
+/* https://opentdb.com/api.php?amount=20&category=18&difficulty=medium&type=multiple */
