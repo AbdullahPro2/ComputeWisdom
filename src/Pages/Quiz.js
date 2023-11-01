@@ -2,6 +2,7 @@ import { useEffect, useReducer, useState } from "react";
 import Navbar from "../components/Navbar";
 import Question from "../components/Question";
 import Loader from "../components/Loader";
+import { useParams } from "react-router-dom";
 
 const intitialState = {
   questions: [],
@@ -22,17 +23,29 @@ function Quiz() {
     reducer,
     intitialState
   );
+  const { category } = useParams();
+  const categoryValue =
+    category === "generalKnowledge"
+      ? 9
+      : category === "history"
+      ? 23
+      : category === "computer"
+      ? 18
+      : category === "scienceNature"
+      ? 17
+      : "";
 
   useEffect(() => {
     async function fetchQuestion() {
       const res = await fetch(
-        "https://opentdb.com/api.php?amount=20&category=18&difficulty=medium&type=multiple"
+        `https://opentdb.com/api.php?amount=15&category=${categoryValue}&difficulty=medium&type=multiple`
       );
       const data = await res.json();
       dispatch({ type: "dataReceived", payload: data.results });
     }
     fetchQuestion();
-  }, []);
+  }, [categoryValue]);
+
   return (
     <div>
       <Navbar />

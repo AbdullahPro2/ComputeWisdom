@@ -5,6 +5,12 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.navbar-list li .active {
+  border-bottom: 1px solid #ffa500;
+  box-shadow: 0 0 10px 3px #ffa500;
+}
+
 html {
   font-size: 62 5%;
 }
@@ -69,7 +75,7 @@ a {
 .navbar-list li:hover {
   transform: scale(1.1);
 }
-.navbar-list.active {
+.navbar-list.nav-active {
   right: 0;
 }
 .header-content {
@@ -116,7 +122,21 @@ a {
 @media (min-width: 601px) and (max-width: 900px) {
 }
 
-@media (min-width: 901px) and (max-width: 1200px) {
+@media (min-width: 1000px) {
+  .navbar-list {
+    flex-direction: row;
+    position: relative;
+    width: auto;
+    height: auto;
+    right: 0;
+    color: #ffa600;
+    background: none;
+    gap: 1.5rem;
+    font-size: 1.2rem;
+  }
+  .btn img {
+    display: none;
+  }
 }
 
 @media (min-width: 1201px) {
