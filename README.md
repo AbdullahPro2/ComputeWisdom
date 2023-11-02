@@ -72,3 +72,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### API USED:
+
+[https://opentdb.com/api_config.php]
+[https://opentdb.com/api.php?amount=20&category=18&difficulty=medium&type=multiple]

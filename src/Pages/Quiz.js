@@ -1,25 +1,49 @@
-import { useEffect, useReducer, useState } from "react";
+import { useEffect, useReducer } from "react";
 import Navbar from "../components/Navbar";
 import Question from "../components/Question";
 import Loader from "../components/Loader";
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
+import Progres from "../components/Progres";
 
 const intitialState = {
   questions: [],
   index: 0,
   answer: null,
   status: "loading",
+  points: 0,
 };
 function reducer(state, action) {
   switch (action.type) {
     case "dataReceived":
       return { ...state, questions: action.payload, status: "ready" };
+    case "answerd":
+      console.log("pay", action.payload);
+      return {
+        ...state,
+        answer: state.answer + 1,
+        points:
+          action.payload === state.questions[state.index].correct_answer
+            ? state.points + 10
+            : state.points + 0,
+      };
+    case "next":
+      return {
+        ...state,
+        index: state.index + 1,
+        answer: 0,
+      };
+    case "finish":
+      return {
+        ...state,
+        status: "finish",
+      };
+
     default:
       throw new Error("Action Unknown");
   }
 }
 function Quiz() {
-  const [{ questions, index, status }, dispatch] = useReducer(
+  const [{ questions, index, status, answer, points }, dispatch] = useReducer(
     reducer,
     intitialState
   );
@@ -33,7 +57,7 @@ function Quiz() {
       ? 18
       : category === "scienceNature"
       ? 17
-      : "";
+      : 23;
 
   useEffect(() => {
     async function fetchQuestion() {
@@ -48,9 +72,26 @@ function Quiz() {
 
   return (
     <div>
-      <Navbar />
       {status === "loading" && <Loader />}
-      {status === "ready" && <Question question={questions[index]} />}
+      {status === "ready" && (
+        <>
+          <Progres numQuestions={questions} answer={answer} index={index} />
+          <Question
+            question={questions[index]}
+            dispatch={dispatch}
+            index={index}
+            questions={questions}
+          />
+        </>
+      )}
+      {status === "finish" && (
+        <div className="result">
+          <p>
+            You Scored {points} / {questions.length * 10}
+          </p>
+          <span>{Math.trunc((points / (questions.length * 10)) * 100)}%</span>
+        </div>
+      )}
     </div>
   );
 }

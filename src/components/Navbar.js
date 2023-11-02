@@ -10,18 +10,29 @@ function Navbar() {
   return (
     <nav className="navbar">
       <img src={logo} alt="logo" className="logo" />
-      <ul className={`navbar-list ${isActive ? "nav-active" : " "}`}>
+      <ul
+        className={`navbar-list ${isActive ? "nav-active" : " "}`}
+        onClick={() => setIsActive(false)}
+      >
         <li>
-          <NavLink to="/quiz/computer">Computer</NavLink>
+          <NavLink to="/quiz/computer" reloadDocument>
+            Computer
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/quiz/scienceNature">Science & Nature</NavLink>
+          <NavLink to="/quiz/scienceNature" reloadDocument>
+            Science & Nature
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/quiz/generalKnowledge">General Knowledge</NavLink>
+          <NavLink to="/quiz/generalKnowledge" reloadDocument>
+            General Knowledge
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/quiz/history">History</NavLink>
+          <NavLink to="/quiz/history" reloadDocument>
+            History
+          </NavLink>
         </li>
         <li>
           <NavLink to="/about">About us</NavLink>

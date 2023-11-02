@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 function Header() {
   return (
     <header className="header">
-      <Navbar />
       <div className="header-content">
         <div className="quiz-info">
           <h1 className="quiz-info-text">
