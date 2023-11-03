@@ -16,7 +16,6 @@ function reducer(state, action) {
     case "dataReceived":
       return { ...state, questions: action.payload, status: "ready" };
     case "answerd":
-      console.log("pay", action.payload);
       return {
         ...state,
         answer: state.answer + 1,
@@ -47,6 +46,7 @@ function Quiz() {
     intitialState
   );
   const { category } = useParams();
+  console.log(category);
   const categoryValue =
     category === "generalKnowledge"
       ? 9

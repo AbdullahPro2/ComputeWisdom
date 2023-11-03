@@ -9,7 +9,9 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      <img src={logo} alt="logo" className="logo" />
+      <NavLink to="/">
+        <img src={logo} alt="logo" className="logo" />
+      </NavLink>
       <ul
         className={`navbar-list ${isActive ? "nav-active" : " "}`}
         onClick={() => setIsActive(false)}

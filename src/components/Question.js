@@ -23,7 +23,6 @@ function Question({ question, dispatch, index, questions }) {
   }, [question]);
   const questionDecoded = decodeHTMLEntities(question.question);
   const handleButtonClick = (e) => {
-    console.log("click", e.target.value);
     dispatch({ type: "answerd", payload: e.target.value });
     setIsButtonDisabled(true);
   };
