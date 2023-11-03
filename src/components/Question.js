@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
 
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -15,7 +14,6 @@ function decodeHTMLEntities(text) {
 }
 
 function Question({ question, dispatch, index, questions }) {
-  const navigate = useNavigate();
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
   const [shuffleAnswers, setShuffledAnswers] = useState([]);
   useEffect(() => {

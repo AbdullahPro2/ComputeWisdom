@@ -1,6 +1,5 @@
 import questionMark from "../imgs/questionMark.png";
 
-import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
 
 function Header() {

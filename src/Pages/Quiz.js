@@ -1,8 +1,7 @@
 import { useEffect, useReducer } from "react";
-import Navbar from "../components/Navbar";
 import Question from "../components/Question";
 import Loader from "../components/Loader";
-import { NavLink, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Progres from "../components/Progres";
 
 const intitialState = {
