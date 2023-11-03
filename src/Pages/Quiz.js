@@ -1,7 +1,7 @@
 import { useEffect, useReducer } from "react";
 import Question from "../components/Question";
 import Loader from "../components/Loader";
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import Progres from "../components/Progres";
 
 const intitialState = {
@@ -14,7 +14,14 @@ const intitialState = {
 function reducer(state, action) {
   switch (action.type) {
     case "dataReceived":
-      return { ...state, questions: action.payload, status: "ready" };
+      return {
+        ...state,
+        index: 0,
+        points: 0,
+        answer: null,
+        questions: action.payload,
+        status: "ready",
+      };
     case "answerd":
       return {
         ...state,
@@ -34,6 +41,14 @@ function reducer(state, action) {
       return {
         ...state,
         status: "finish",
+      };
+    case "restart":
+      return {
+        ...state,
+        questions: [],
+        index: 0,
+        answer: null,
+        points: 0,
       };
 
     default:
@@ -61,7 +76,7 @@ function Quiz() {
   useEffect(() => {
     async function fetchQuestion() {
       const res = await fetch(
-        `https://opentdb.com/api.php?amount=15&category=${categoryValue}&difficulty=medium&type=multiple`
+        `https://opentdb.com/api.php?amount=3&category=${categoryValue}&difficulty=medium&type=multiple`
       );
       const data = await res.json();
       dispatch({ type: "dataReceived", payload: data.results });
@@ -89,6 +104,15 @@ function Quiz() {
             You Scored {points} / {questions.length * 10}
           </p>
           <span>{Math.trunc((points / (questions.length * 10)) * 100)}%</span>
+          <NavLink to="/">
+            <button
+              className="finish-btn"
+              onClick={() => dispatch({ type: "restart" })}
+            >
+              {" "}
+              Restart &#8634;
+            </button>
+          </NavLink>
         </div>
       )}
     </div>

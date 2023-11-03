@@ -17,7 +17,7 @@ function Navbar() {
         onClick={() => setIsActive(false)}
       >
         <li>
-          <NavLink to="/quiz/computer" reloadDocument>
+          <NavLink to="/quiz/computer" reloadDocument={true}>
             Computer
           </NavLink>
         </li>

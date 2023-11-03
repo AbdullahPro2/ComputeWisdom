@@ -225,6 +225,22 @@ progress {
 .result span {
   margin-top: 2rem;
 }
+.finish-btn {
+  background-color: #ff6c23; /* Blue background */
+  color: #000000; /* Black text on hover */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  float: right;
+  margin-top: 2rem;
+}
+.finish-btn:hover,
+.finish-btn:visited {
+  background-color: #ff5400;
+}
+
 .loader {
   font-size: 2rem;
   text-align: center;

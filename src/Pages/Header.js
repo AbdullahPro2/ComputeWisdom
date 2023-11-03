@@ -1,6 +1,6 @@
 import questionMark from "../imgs/questionMark.png";
 
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Header() {
   return (
@@ -11,9 +11,9 @@ function Header() {
             Dive into Our Latest Quiz to Test Your Expertise
           </h1>
           <h2 className="quiz-info-text">Put Your Knowledge to the Test.</h2>
-          <button className="quiz-info-text">
-            <Link to="/quiz">Start Quiz &#x1F449;</Link>
-          </button>
+          <NavLink to="/quiz">
+            <button className="quiz-info-text">Start Quiz &#x1F449;</button>
+          </NavLink>
         </div>
         <div className="question-mark">
           <img src={questionMark} alt="questionMark PNG" />
