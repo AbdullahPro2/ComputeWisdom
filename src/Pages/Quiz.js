@@ -76,7 +76,7 @@ function Quiz() {
   useEffect(() => {
     async function fetchQuestion() {
       const res = await fetch(
-        `https://opentdb.com/api.php?amount=3&category=${categoryValue}&difficulty=medium&type=multiple`
+        `https://opentdb.com/api.php?amount=10&category=${categoryValue}&difficulty=medium&type=multiple`
       );
       const data = await res.json();
       dispatch({ type: "dataReceived", payload: data.results });
