@@ -1,5 +1,7 @@
 # ComputeWisdom
 
+The site is live at: [ComputeWisdom](https://abdullahpro2.github.io/ComputeWisdom/#/).
+
 React app For Compute Wisdom and to check your computer knowledge. Powered by OpenTDb API.
 
 # Getting Started with Create React App
